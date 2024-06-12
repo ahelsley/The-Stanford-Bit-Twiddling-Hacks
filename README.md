@@ -343,22 +343,25 @@ On some architectures, the lack of branching can more than make up for what appe
 --------------------------------------------------------------------------------
 
 <ins>
-###  <a name="#LSB" /> Extract the least significant 1-bit
+
+### <a name="#LSB" /> Extract the least significant 1-bit
 
 This is one of the simplest recipes and variants of this are used extensively in the hacks that follow.
 
 
 ```c
 unsigned v; // the value to extract the least significant 1-bit from
-v & -v
+v & -v;
 ```
+
 </ins>
 
 
 --------------------------------------------------------------------------------
 
 <ins>
-###  <a name="#LSBs" /> Extract the consecutive least significant 1-bits
+
+### <a name="#LSBs" /> Extract the consecutive least significant 1-bits
 
 ```c
 unsigned v; // the value to extract the least significant 1-bit from
@@ -367,8 +370,9 @@ unsigned m; // mask for the consecutive least significant 1-bits
 
 w = (v | (v-1)) + 1; // cascade a 1 up to the first 0 above the least significant bit of v
 m = (w & -w) - 1;  // compute the mask
-return v & m;
+v & m;
 ```
+
 </ins>
 
 
